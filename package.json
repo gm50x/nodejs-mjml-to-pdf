@@ -1,10 +1,13 @@
 {
   "name": "mjml-to-pdf",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Geração de PDFs a partir de templates MJML",
+  "main": "main.js",
   "scripts": {
-    "start": "docker compose up -d && sleep 10 && docker compose down"
+    "start": "node .",
+    "start:docker": "docker compose up -d",
+    "poststart:docker": "npm run docker:cleanup",
+    "docker:cleanup": "sleep 5 && docker compose down --rmi='all' --remove-orphans"
   },
   "keywords": [],
   "author": "",
