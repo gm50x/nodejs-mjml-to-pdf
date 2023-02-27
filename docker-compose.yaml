@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  voltz_mjml_to_pdf:
+    build:
+      context: .
+    image: voltz/mjml-to-pdf
+    container_name: voltz_mjml_to_pdf
+    volumes: [ '.:/app' ]
